@@ -1,0 +1,492 @@
+.page-section {
+    display: none;
+}
+
+#main-section {
+    display: block;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+  
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #d3d3d3;
+    padding: 10px;
+    
+}
+
+.logo {
+    width: 30px;
+    height: 15px;
+    background-color: brown;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
+}
+.main-pagetable{
+    width: 90%;
+}
+.form-container {
+    margin-top: 15px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    width: 600px;
+    margin-left: 15px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+label {
+    width: 50px;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+.input-field {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    font-size: 14px;
+    border: 1px solid black;
+}
+
+.check-btn, .add-btn {
+    padding: 10px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #6ec092;
+    color: black;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 10px;
+    align-items: center;
+}
+
+.check-btn {
+    width: 140px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.check-btn:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+.availability-field {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    width: 150px;
+    height: 35px;
+    margin-left: 10px;
+    resize: none;
+    cursor: not-allowed;
+}
+
+.add-btn {
+    width: 200px;
+    background-color: #6ec092;
+   
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+.add-btn:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+.transaction-form-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    width: 650px;
+    margin-top: 15px;
+    margin-left: 15px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.transaction-form-section h3 {
+    margin-top: 0;
+    font-size: 18px;
+    color: black;
+}
+
+.transaction-form-group {
+    margin-bottom: 15px;
+}
+
+.transaction-form-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: black;
+}
+
+.transaction-input-field {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    font-size: 14px;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+.transaction-form-buttons {
+    display: flex;
+    justify-content: flex-start; 
+    gap: 10px; 
+}
+
+.transaction-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #6ec092;
+    color: black;
+    font-size: 14px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.transaction-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #7ad092;
+}
+.total-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    width: 400px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.total-box h3 {
+    margin-top: 0;
+}
+
+.total-box div {
+    margin: 10px 0;
+}
+
+.total-box textarea {
+    width: 100%;
+    height: 30px;
+    resize: none;
+    border-radius: 20px;
+    border: 1px solid black;
+}
+.today-layout{
+    height: 490px;
+}
+.today-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    margin-left: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.today-box h3 {
+    margin-top: 0;
+}
+
+.today-box div {
+    margin: 10px 0;
+}
+
+.today-box textarea {
+    width: 100%;
+    height: 30px;
+    resize: none;
+    border-radius: 20px;
+    border: 1px solid black;
+}
+.edit-transaction-section {
+    margin-top: 20px;
+    margin-left: 20px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.edit-transaction-group {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.edit-transaction-group label {
+    width: 80px;
+    font-size: 14px;
+    color: black;
+}
+
+.edit-transaction-input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 20px; /* Rounded corners */
+    font-size: 14px;
+    margin-left: 10px;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+.edit-transaction-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #6ec092;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.edit-transaction-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.edit-transaction-buttons {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px; /* Close spacing between buttons */
+}
+.transactions-today,
+.transactions-week {
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.transactions-today h3,
+.transactions-week h3 {
+    font-size: 18px;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.transaction-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #f9f9f9; 
+    border-radius: 5px;
+    overflow: hidden;
+    
+}
+
+.transaction-table thead {
+    background-color: #808c73;
+}
+
+.transaction-table th,
+.transaction-table td {
+    padding: 10px;
+    text-align: left;
+    font-size: 14px;
+    color: black;
+}
+
+.transaction-table tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+.transaction-table tbody tr:last-child {
+    border-bottom: none;
+}
+/* Reservation Section */
+.reservation-section {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    width: 900px;
+    margin-left: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.section-title {
+    font-size: 16px;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.input-reservation {
+    width: 250px;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+    background-color: white;
+    margin-right: 10px;
+    border: 1px solid black;
+}
+
+.btn-reservation-search {
+    padding: 8px 15px;
+    background-color: #6ec092;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-reservation-search:Hover{
+    
+        transform: translateY(-5px); 
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    
+}
+.input-label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: black;
+}
+
+.input-reservation-details {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: black;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.reservation-buttons {
+    display: flex;
+   
+    justify-content: flex-start; 
+    gap: 10px; 
+    margin-top: 20px;
+}
+
+.btn-reservation-delete,
+.btn-reservation-update {
+    padding: 8px 15px;
+    background-color: #6ec092;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-reservation-delete:HOver,
+.btn-reservation-update:Hover {
+   
+        transform: translateY(-5px); 
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    
+}
+/* Reservation Table Section */
+.reservation-table-section {
+   
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.reservation-table-section h3 {
+    font-size: 16px;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.reservation-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    overflow: hidden;
+    
+}
+
+.reservation-table thead {
+    background-color: #808c73;
+}
+
+.reservation-table th,
+.reservation-table td {
+    padding: 10px;
+    text-align: left;
+    font-size: 14px;
+    color: black;
+}
+
+.reservation-table tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+.reservation-table tbody tr:last-child {
+    border-bottom: none;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  margin-top: 20px;
+    align-items: center;
+    
+}
+
+.chart {
+    width: 70%;
+    height: 500px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+.heading {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+}
