@@ -25,38 +25,41 @@
 <tr>
 <td>
     <div class="form-container">
-        <form>
+        <form id="reservationForm">
             <div class="form-group">
                 <label for="name">Name:</label>
-                <input type="text" id="name" class="input-field" placeholder="Enter name">
-                <button type="button" class="check-btn">Check Availability</button>
+                <input type="text" id="name" name="name" class="input-field" placeholder="Enter name" required>
             </div>
             <div class="form-group">
                 <label for="time">Time:</label>
-                <input type="time" id="time" class="input-field">
-                <textarea id="availability" class="availability-field" readonly></textarea>
+                <input type="time" id="time" name="time" class="input-field" required>
             </div>
             <div class="form-group">
                 <label for="date">Date:</label>
-                <input type="date" id="date" class="input-field">
+                <input type="date" id="date" name="date" class="input-field" required>
             </div>
             <div class="form-group">
                 <label for="table">Table:</label>
-                <select id="table" class="input-field">
+                <select id="table" name="table" class="input-field" required>
                     <option value="" disabled selected>Select a table</option>
                     <option value="table1">Table 1</option>
                     <option value="table2">Table 2</option>
                     <option value="table3">Table 3</option>
                     <option value="table4">Table 4</option>
-                    <!-- Add more options as needed -->
                 </select>
             </div>
             <div class="form-group">
-                <button type="submit" class="add-btn">Add Reservation</button>
+                <label for="mobile_no">Mobile No:</label>
+                <input type="text" id="mobile_no" name="mobile_no" class="input-field" placeholder="Enter mobile number" required>
+            </div>
+            <div class="form-group">
+                <button type="button" id="checkAvailability" class="check-btn">Check Availability</button>
+            </div>
+            <div class="form-group">
+                <button type="submit" id="addReservation" class="add-btn" disabled>Add Reservation</button>
             </div>
         </form>
     </div>
-    
 </td>
 
 
@@ -132,35 +135,33 @@
 <!-- main page end -->
  <!-- transaction page start -->
  <section id="edit-transaction-section" class="page-section">
-<div class="edit-transaction-section" name="edit-transaction-section" id="edit-transaction-section">
-    <form>
-        <div class="edit-transaction-group">
-            <label for="edit-transaction-id">Enter ID:</label>
-            <input type="text" id="edit-transaction-id" class="edit-transaction-input">
-            <button type="button" class="edit-transaction-btn search-btn">Search</button>
-        </div>
-        <div class="edit-transaction-group">
-            <label for="edit-transaction-name">Name :</label>
-            <input type="text" id="edit-transaction-name" class="edit-transaction-input">
-        </div>
-        <div class="edit-transaction-group">
-            <label for="edit-transaction-date">Date :</label>
-            <input type="date" id="edit-transaction-date" class="edit-transaction-input">
-        </div>
-        <div class="edit-transaction-group">
-            <label for="edit-transaction-time">Time :</label>
-            <input type="time" id="edit-transaction-time" class="edit-transaction-input">
-        </div>
-        <div class="edit-transaction-group">
-            <label for="edit-transaction-amount">Amount :</label>
-            <input type="number" id="edit-transaction-amount" class="edit-transaction-input">
-        </div>
-        <div class="edit-transaction-buttons">
-            <button type="button" class="edit-transaction-btn delete-btn">delete</button>
-            <button type="submit" class="edit-transaction-btn update-btn">update</button>
-        </div>
-    </form>
-</div>
+    <div class="edit-transaction-section" id="edit-transaction-section">
+        <form>
+            <div class="edit-transaction-group">
+                <label for="edit-transaction-id">Enter name:</label>
+                <input type="text" id="edit-transaction-id" class="edit-transaction-input"required>
+                <button type="button" class="edit-transaction-btn search-btn">Search</button>
+            </div>
+        </form>
+      </div>
+      <div class="search-results-section">
+        <h3>Search Results</h3>
+        <table class="transaction-table">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Amount</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="search-results">
+                <!-- Data will be populated by JavaScript -->
+            </tbody>
+        </table>
+      </div>    
 <div class="transactions-today">
     <h3>Today Transaction</h3>
     <table class="transaction-table">
@@ -199,28 +200,35 @@
 </section>
  <!-- transaction page end -->
    <!-- reservation page start -->
-   <section id="reservation-section" class="page-section">
-<div class="reservation-section" name="reservation-section" id="reservation-section">
-    <h3 class="section-title">Enter Name:</h3>
-    <div class="input-group">
-        <input type="text" class="input-reservation" placeholder="Enter Name">
-        <button class="btn-reservation-search">Search</button>
-    </div>
+<section id="reservation-section" class="page-section">
+    <div class="reservation-section" name="reservation-section" id="reservation-section">
+        <form>
+            <h3 class="section-title">Enter Name:</h3>
+            <div class="input-group">
+                <input type="text" id="searchName" class="input-reservation" placeholder="Enter Name">
+                <button type="button" id="searchBtn" class="btn-reservation-search">Search</button>
+            </div>
+        </form>
+       </div>
 
-    <label class="input-label">Name</label>
-    <input type="text" class="input-reservation-details" disabled>
-
-    <label class="input-label">Date</label>
-    <input type="text" class="input-reservation-details" disabled>
-
-    <label class="input-label">Time</label>
-    <input type="text" class="input-reservation-details" disabled>
-
-    <div class="reservation-buttons">
-        <button class="btn-reservation-delete">delete</button>
-        <button class="btn-reservation-update">update</button>
-    </div>
-</div>
+       <div class="reservation-table-section">
+        <h3>Search Results</h3>
+        <table class="reservation-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Table No</th>
+                    <th>Mobile No</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="searchResults">
+                <!-- Search results data will be populated here -->
+            </tbody>
+        </table>
+       </div>     
 
 <div class="reservation-table-section">
     <h3>Today Reservations</h3>
@@ -237,6 +245,24 @@
         </tbody>
     </table>
 </div>
+<div class="reservation-table-section">
+    <h3>Tomorrow's Reservations</h3>
+    <table class="reservation-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Table No</th>
+                <th>Mobile No</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="tomorrowReservations">
+            <!-- Tomorrow's reservation data will be populated here -->
+        </tbody>
+    </table>
+  </div>
 </section>
  <!-- reservation page end --> 
   <!-- summary page start -->
