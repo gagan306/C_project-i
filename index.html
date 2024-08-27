@@ -371,7 +371,59 @@
         });
     });
 });
+document.addEventListener('DOMContentLoaded', function() {
+    // Function to generate a unique transaction ID
+    function generateTransactionId() {
+        return 'TXN-' + Math.floor(Math.random() * 1000000);
+    }
 
+    var transactionIdInput = document.getElementById('transaction-id');
+    
+    // Generate and set a new transaction ID on page load
+    transactionIdInput.value = generateTransactionId();
+
+    // Set current date and time
+    function setCurrentDateTime() {
+        var now = new Date();
+        var dateString = now.toISOString().split('T')[0]; // Format: YYYY-MM-DD
+        var timeString = now.toTimeString().split(' ')[0].substring(0, 5); // Format: HH:MM
+
+        document.getElementById('transaction-date').value = dateString;
+        document.getElementById('transaction-time').value = timeString;
+    }
+
+    setCurrentDateTime();
+
+    // Handle form submission
+    document.getElementById('transactionForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        var formData = new FormData(this);
+
+        fetch('transactions.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'success') {
+                alert(data.message);
+                // Regenerate a new ID for the next transaction
+                transactionIdInput.value = generateTransactionId();
+                // Reset the form and set the date and time
+                document.getElementById('transactionForm').reset();
+                setCurrentDateTime();
+                // Set a new ID after form reset
+                transactionIdInput.value = generateTransactionId();
+            } else {
+                alert(data.message);
+            }
+        })
+        .catch(error => {
+            alert('An error occurred: ' + error);
+        });
+    });
+});
 </script>
  <!-- summary page end -->
 </body>
