@@ -19,6 +19,7 @@ body {
     justify-content: space-between;
     background-color: #d3d3d3;
     padding: 10px;
+    height: 40px;
     
 }
 
@@ -28,6 +29,10 @@ body {
     background-color: brown;
     border-radius: 50%;
     margin-left: 10px;
+    width: 40px;
+    height: 35px;
+    margin-left: 10px;
+    background-color: #d3d3d3;
 }
 
 nav ul {
@@ -45,6 +50,7 @@ nav ul li a {
     text-decoration: none;
     color: black;
     font-size: 12px;
+    font-size: 15px;
 }
 .main-pagetable{
     width: 90%;
@@ -238,6 +244,89 @@ label {
     border-radius: 20px;
     border: 1px solid black;
 }
+/* Styling for the total box */
+.total-box {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    width: 400px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+}
+
+.total-box h3 {
+    margin: 0 0 15px 0; /* Adjusted margin for spacing below heading */
+    font-size: 1.5em;
+    color: #333;
+}
+
+.total-box div {
+    margin-bottom: 15px;
+}
+
+.total-box textarea {
+    width: calc(100% - 20px); /* Adjust width to account for margin */
+    height: 40px;
+    resize: none;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 8px;
+    font-size: 2em;
+    background-color: #fff;
+    margin-right: 20px; /* Add right margin */
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+}
+
+.total-box textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Styling for the today layout */
+.today-layout {
+    height: auto; /* Adjusted to fit content */
+    padding: 20px;
+}
+
+/* Styling for the today box */
+.today-box {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    margin: 20px auto;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.today-box h3 {
+    margin: 0 0 15px 0; /* Adjusted margin for spacing below heading */
+    font-size: 1.5em;
+    color: #333;
+}
+
+.today-box div {
+    margin-bottom: 15px;
+}
+
+.today-box textarea {
+    width: calc(100% - 20px); /* Adjust width to account for margin */
+    height: 40px;
+    resize: none;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 8px;
+    font-size: 2em;
+    background-color: #fff;
+    margin-right: 20px; /* Add right margin */
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+}
+
+.today-box textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
 .edit-transaction-section {
     margin-top: 20px;
     margin-left: 20px;

@@ -1,0 +1,55 @@
+.edit-transaction-section {
+    margin-top: 20px;
+    margin-left: 100px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.edit-transaction-group {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.edit-transaction-group label {
+    width: 80px;
+    font-size: 14px;
+    color: black;
+}
+
+.edit-transaction-input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 20px; /* Rounded corners */
+    font-size: 14px;
+    margin-left: 10px;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+.edit-transaction-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #6ec092;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.edit-transaction-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.edit-transaction-buttons {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px; /* Close spacing between buttons */
+}
