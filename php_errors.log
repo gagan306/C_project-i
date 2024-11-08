@@ -1,0 +1,10 @@
+[01-Oct-2024 11:18:05 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'employee_id' in 'where clause' in C:\xampp\htdocs\CMS\AddEmpLogTime.php:64
+Stack trace:
+#0 C:\xampp\htdocs\CMS\AddEmpLogTime.php(64): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\CMS\AddEmpLogTime.php on line 64
+[01-Oct-2024 11:18:14 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'employee_id' in 'where clause' in C:\xampp\htdocs\CMS\AddEmpLogTime.php:64
+Stack trace:
+#0 C:\xampp\htdocs\CMS\AddEmpLogTime.php(64): PDOStatement->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\CMS\AddEmpLogTime.php on line 64
