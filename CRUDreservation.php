@@ -16,23 +16,26 @@ function fetchReservations($mysqli) {
     $today = date('Y-m-d');
     $tomorrow = date('Y-m-d', strtotime('+1 day'));
 
-    $queryToday = "SELECT id, name, time_from, time_to, table_number, mobile FROM reservations WHERE DATE(time_from) = ?";
-    $stmtToday = $mysqli->prepare($queryToday);
-    $stmtToday->bind_param("s", $today);
-    $stmtToday->execute();
-    $todayResults = $stmtToday->get_result();
-    $todayData = $todayResults->fetch_all(MYSQLI_ASSOC);
+    try {
+        $queryToday = "SELECT id, name, time_from, time_to, table_number, mobile FROM reservations WHERE DATE(time_from) = ?";
+        $stmtToday = $mysqli->prepare($queryToday);
+        $stmtToday->bind_param("s", $today);
+        $stmtToday->execute();
+        $todayResults = $stmtToday->get_result();
+        $todayData = $todayResults->fetch_all(MYSQLI_ASSOC);
 
-    $queryTomorrow = "SELECT id, name, time_from, time_to, table_number, mobile FROM reservations WHERE DATE(time_from) = ?";
-    $stmtTomorrow = $mysqli->prepare($queryTomorrow);
-    $stmtTomorrow->bind_param("s", $tomorrow);
-    $stmtTomorrow->execute();
-    $tomorrowResults = $stmtTomorrow->get_result();
-    $tomorrowData = $tomorrowResults->fetch_all(MYSQLI_ASSOC);
+        $queryTomorrow = "SELECT id, name, time_from, time_to, table_number, mobile FROM reservations WHERE DATE(time_from) = ?";
+        $stmtTomorrow = $mysqli->prepare($queryTomorrow);
+        $stmtTomorrow->bind_param("s", $tomorrow);
+        $stmtTomorrow->execute();
+        $tomorrowResults = $stmtTomorrow->get_result();
+        $tomorrowData = $tomorrowResults->fetch_all(MYSQLI_ASSOC);
 
-    echo json_encode(['status' => 'success', 'today' => $todayData, 'tomorrow' => $tomorrowData]);
+        echo json_encode(['status' => 'success', 'today' => $todayData, 'tomorrow' => $tomorrowData]);
+    } catch (Exception $e) {
+        echo json_encode(['status' => 'error', 'message' => $e->getMessage()]);
+    }
 }
-
 // Fetch reservation by ID
 function fetchReservation($mysqli, $id) {
     $query = "SELECT * FROM reservations WHERE id = ?";

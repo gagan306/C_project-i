@@ -1025,42 +1025,41 @@
 
     // Fetch reservations for today and tomorrow
     function fetchReservations() {
-        fetch('CRUDreservation.php?action=fetchReservations')
-            .then(response => response.json())
-            .then(data => {
-                if (data.status === 'success') {
-                    populateReservations('todayReservations', data.today);
-                    populateReservations('tomorrowReservations', data.tomorrow);
-                } else {
-                    console.error('Error fetching reservations:', data.message);
-                    alert('Error: ' + data.message);
-                }
-            })
-            .catch(error => {
-                console.error('Error fetching reservations:', error);
-                alert('Error fetching reservation data.');
-            });
-    }
-
-    // Function to populate reservation tables
-    // Populate reservation tables
-    function populateReservations(tableId, reservations) {
-        const tbody = document.getElementById(tableId);
-        tbody.innerHTML = ''; // Clear any previous data
-
-        reservations.forEach(reservation => {
-            const row = `<tr>
-                <td>${reservation.name}</td>
-                <td>${reservation.time_from.split(' ')[0]}</td>
-                <td>${reservation.time_from.split(' ')[1].slice(0, 5)}</td>
-                <td>${reservation.time_to.split(' ')[1].slice(0, 5)}</td>
-                <td>${reservation.table_number}</td>
-                <td>${reservation.mobile}</td>
-                <td><button class="btn-edit" onclick="openEditDialog(${reservation.id})">Edit</button></td>
-            </tr>`;
-            tbody.innerHTML += row;
+    fetch('CRUDreservation.php?action=fetchReservations')
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'success') {
+                populateReservations('todayReservations', data.today);
+                populateReservations('tomorrowReservations', data.tomorrow);
+            } else {
+                console.error('Error fetching reservations:', data.message);
+                alert('Error: ' + data.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching reservations:', error);
+            alert('Error fetching reservation data.');
         });
-    }
+}
+
+function populateReservations(tableId, reservations) {
+    const tbody = document.getElementById(tableId);
+    tbody.innerHTML = ''; // Clear any previous data
+
+    reservations.forEach(reservation => {
+        const row = `<tr>
+            <td>${reservation.name}</td>
+            <td>${reservation.time_from.split(' ')[0]}</td>
+            <td>${reservation.time_from.split(' ')[1].slice(0, 5)}</td>
+            <td>${reservation.time_to.split(' ')[1].slice(0, 5)}</td>
+            <td>${reservation.table_number}</td>
+            <td>${reservation.mobile}</td>
+            <td><button class="btn-edit" onclick="openEditDialog(${reservation.id})">Edit</button></td>
+        </tr>`;
+        tbody.innerHTML += row;
+    });
+}
+
     function openEditDialog(reservationId) {
         // Fetch reservation details
         fetch(`CRUDreservation.php?action=fetchReservation&id=${reservationId}`)
