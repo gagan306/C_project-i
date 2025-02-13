@@ -942,7 +942,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 options: {
                     scales: {
                         y: {
-                            beginAtZero: true
+                            beginAtZero: true,
+                            min: 1 
                         }
                     }
                 }
